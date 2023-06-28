@@ -32,6 +32,12 @@ The JSON file contains three days worth of data which will determine how you cal
     - Areas to improve further
 
 ## Answer
-- How to run the spec: rspec spec/application_report_spec.rb
+- How to run the spec: bundle exec rspec --format d
+- Summary or justification of design decisions or architecture: I used group_by
+iterator to group data first based on hour of the day and then with date. I
+broke task into two methods, first one is filtering data based on the channel,
+after that second method calculates the average.
 - For improvement:
-  - 3.to_f could be dynamic instead of a fixed integer.
+  - timezone can be added to perform calculations.
+  - filter_trend method can be made dynamic to filter more attributes using
+  ruby method missing technique.
